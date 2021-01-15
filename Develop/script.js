@@ -1,7 +1,15 @@
+
+
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var specialCharacters = ["!","@","#","$","%","^","&","*","(",")","+","=","-"];
 // Write password to the #password input
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -14,19 +22,86 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-//   GIVEN I need a new, secure password
-//   WHEN I click the button to generate a password
-//   THEN I am presented with a series of prompts for password criteria
-//   WHEN prompted for password criteria
-//   THEN I select which criteria to include in the password
-//   WHEN prompted for the length of the password
-//   THEN I choose a length of at least 8 characters and no more than 128 characters
-//   WHEN prompted for character types to include in the password
-//   THEN I choose lowercase, uppercase, numeric, and/or special characters
-//   WHEN I answer each prompt
-//   THEN my input should be validated and at least one character type should be selected
-//   WHEN all prompts are answered
-//   THEN a password is generated that matches the selected criteria
+
+
+
+var passwordSelection = [];
+var newPassword = [];
+function generatePassword() {
+  let upperCaseVar = confirm("Do you want upper case letter??");
+
+  let lowerCaseVar = confirm("Do you want lower case letter??");
+  
+  let specialVar = confirm("Do you want special characters??");
+  
+  
+  let numVar = confirm("Do you want numbers??");
+// prompt password length
+  var passwordLength = prompt("How long would you like the password? Please pick a number between 8 - 128.");
+  console.log(passwordLength)
+    if (passwordLength < 8 || passwordLength > 128) {
+    alert("The number you selected is outside the parameters of 8-128, please adjust.");
+    
+    }
+
+      // yes or no for each array
+
+if (numVar){
+  passwordSelection.push(numbers)
+  }
+
+  if (upperCaseVar){
+    passwordSelection.push(upperCase)
+  }
+
+  if (lowerCaseVar){
+    passwordSelection.push(lowerCase)
+    }
+
+    if (specialVar){
+      passwordSelection.push(specialCharacters)
+    }
+  console.log(passwordSelection)
+  
+console.log(upperCaseVar);
+console.log(lowerCaseVar);
+console.log(specialVar);
+console.log(numVar);
+
+// if yes to array push to selector array
+// if (upperCaseVar){
+//   passwordSelection.push(upperCase)
+// }
+// if (lowerCaseVar){
+//   passwordSelection.push(lowerCase)
+//   }
+//   if (specialVar){
+//     passwordSelection.push(specialCharacters)
+//   }
+//   if (numVar){
+//     passwordSelection.push(numbers)
+//     }
+
+// go through selector array and add random to newpassword array
+for (let i = 0; i < passwordLength.length; i++){
+  newPassword.push(passwordSelection[Math.floor(Math.random() * passwordSelection.length)])
+}
+console.log(newPassword);
+
+
+}
+
+
+  //for loop through password.length
+
+    // new array filled with selections from comfirms     var passwordSelection = []
+    // use Math.random
+
+
+
 //  WHEN the password is generated
 //   THEN the password is either displayed in an alert or written to the page
-// ```
+
+   // newPassword.push(letterSelection[Math.floor(Math.random() * letterSelection.length)])
+
+//giong to want to .join it    .join pushes string together
