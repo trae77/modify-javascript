@@ -31,7 +31,7 @@ function generatePassword() {
   console.log(passwordLength)
     if (passwordLength < 8 || passwordLength > 128) {
     alert("The number you selected is outside the parameters of 8-128, please adjust.");
-    
+    return
     }
     let upperCaseVar = confirm("Do you want upper case letter??");
 
