@@ -16,4 +16,4 @@ These lessons contain the building blocks of JavaScript with enough higher funct
 Deployed site
 https://trae77.github.io/modify-javascript/
 
-<img src="./Screenshot (5).png" alt="password generator">
+<img src="./Develop/Screenshot (5).png" alt="password generator">
